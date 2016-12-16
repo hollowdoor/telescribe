@@ -13,13 +13,13 @@ Globs are used extensively with `telescribe`.
 
 See the [node-glob](https://github.com/isaacs/node-glob) module for more about globs.
 
-[Example using rollup](#example-using-rollup)
-[A simpler example](#a-simpler-example)
-[Streams example](#streams-example)
-[How read works](#how-read-works)
-[How write works](#how-write-works)
-[Detailed explanation](#detailed-explanation)
-[Contributing](#contributing)
+* [Example using rollup](#example-using-rollup)
+* [A simpler example](#a-simpler-example)
+* [Streams example](#streams-example)
+* [How read works](#how-read-works)
+* [How write works](#how-write-works)
+* [Detailed explanation](#detailed-explanation)
+* [Contributing](#contributing)
 
 Example using rollup
 --------------------
@@ -211,13 +211,13 @@ Detailed explanation
 
 For the purposes of this explanation **transfer** is defined as the function returned by `read()`.
 
-1. Writer methods are passed to `read(readers)`
+1. Reader methods are passed to `read(readers)`
 2. `read(readers)` returns a `transfer()` function
 3. Pass these arguments to `write()`.
    1. transfer (returned from `read()`)
    2. dest (destination directory)
    3. readers (object with reader methods)
-4. `write()` starts I/O immediately
+4. Calling `write(transfer, dest, writers)` starts I/O immediately
    * I/O
      1. `transfer()` is called.
         1. `transfer()` grabs the glob names from the writer methods passed to `write()`
