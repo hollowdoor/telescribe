@@ -1,0 +1,46 @@
+{
+  "name": "telescribe",
+  "version": "1.0.0",
+  "description": "Transfer, and process lots of files",
+  "main": "dist/bundle.js",
+  "jsnext:main": "dist/bundle.es.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "cd test && node run.js",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "fs",
+    "files",
+    "read",
+    "write"
+  ],
+  "author": "Quentin Engles <hollowdoor99@gmail.com> (https://hollowdoor.github.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "glob": "^7.1.1",
+    "glob-promise": "^2.0.0",
+    "is-glob": "^3.1.0",
+    "minimatch": "^3.0.3",
+    "mkdirp": "^0.5.1",
+    "mkdirp-promise": "^5.0.0",
+    "mkpath": "^1.0.0",
+    "mz": "^2.6.0",
+    "performance-now": "^0.2.0"
+  },
+  "devDependencies": {
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-commonjs": "^6.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollowdoor/telescribe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hollowdoor/telescribe/issues"
+  },
+  "homepage": "https://github.com/hollowdoor/telescribe#readme"
+}
