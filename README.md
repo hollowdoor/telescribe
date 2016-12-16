@@ -220,10 +220,10 @@ For the purposes of this explanation **transfer** is defined as the function ret
 4. Calling `write(transfer, dest, writers)` starts I/O immediately
    * I/O
      1. `transfer()` is called.
-        1. `transfer()` grabs the glob names from the writer methods passed to `write()`
-        2. If any file names match those globs then the respective writer method is called
-        2. The writer methods return their value
-5. Internally `write()` takes the models provided by `transfer()`
+        1. `transfer()` grabs the glob names from the reader methods passed to `read()`
+        2. If any file names match those globs then the respective reader method is called
+        2. The reader methods return their value
+5. `write()` takes the models returned by `transfer()`
    1. creates required sub directories under `dest`,
    2. passes the file names, and contents provided by the models into each writer method,
    3. and the writer methods write if they are defined that way
