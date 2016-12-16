@@ -209,15 +209,15 @@ Detailed explanation
 
 ### Here is the process in detail.
 
-For the purposes of this explanation **transfer** is defined as the function returned by `write()`.
+For the purposes of this explanation **transfer** is defined as the function returned by `read()`.
 
-1. Writer methods are passed to `write(writers)`
-2. `write(writers)` returns a `transfer()` function
-3. Pass these arguments to `read()`.
-   1. transfer (returned from `write()`)
+1. Writer methods are passed to `read(readers)`
+2. `read(readers)` returns a `transfer()` function
+3. Pass these arguments to `write()`.
+   1. transfer (returned from `read()`)
    2. dest (destination directory)
    3. readers (object with reader methods)
-4. `read()` starts I/O immediately
+4. `write()` starts I/O immediately
    * I/O
      1. `transfer()` is called.
         1. `transfer()` grabs the glob names from the writer methods passed to `write()`
@@ -231,7 +231,7 @@ For the purposes of this explanation **transfer** is defined as the function ret
 7. `write().then()` resolves to a number representing the duration of I/O, and general process execution
 
 
-`write()` executes I/O right away. `read()` doesn't actually do much of anything except return a transfer function that actually does the reading, and is meant to be passed to `write()`.
+`write()` executes I/O right away. `read()` doesn't actually do much of anything except return a transfer function that actually does the reading, and is meant to be passed to the first argument of `write()`.
 
 ### The model in the results returned from `transfer()`
 
